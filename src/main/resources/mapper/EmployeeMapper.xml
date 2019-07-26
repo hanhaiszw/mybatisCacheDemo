@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.EmployeeMapper">
+
+	<!-- 开启当前mapper的namespace下的二级缓存 -->
+	<!-- 刷新间隔为60秒，最大存储512个对象，默认为1024个对象，而且返回的对象被认为是只读 -->
+	<cache eviction="LRU" flushInterval="60000" size="512" readOnly="true"/>
+
+
+
+	<!-- 关闭二级缓存useCache="false"-->
+    <select id="selectEmployeeById" parameterType="int" resultType="com.example.demo.bo.Employee" useCache="false">
+		SELECT * FROM employee WHERE id = #{id}
+	</select>
+    <!-- 查询所有Employee -->
+    <select id="selectAllEmployee" parameterType="int" resultType="com.example.demo.bo.Employee">
+		SELECT * FROM employee
+	</select>
+    <!-- 根据id删除Employee -->
+    <delete id="deleteEmployeeById" parameterType="int">
+		DELETE FROM employee WHERE id = #{id}
+	</delete>
+</mapper>
