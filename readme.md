@@ -11,7 +11,7 @@ age INT(11) DEFAULT NULL,
 phone VARCHAR(21),
 sal DOUBLE,
 state VARCHAR(18)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 INSERT INTO employee (loginname,PASSWORD,NAME,sex,age,phone,sal,state) VALUES('jack','123456','杰克','男',26,'12345678936',9800,'ACTIVE');
 INSERT INTO employee (loginname,PASSWORD,NAME,sex,age,phone,sal,state) VALUES('rose','123456','露丝','女',21,'78965412395',6800,'ACTIVE');
 INSERT INTO employee (loginname,PASSWORD,NAME,sex,age,phone,sal,state) VALUES('tom','123456','汤姆','男',25,'13902017777',8800,'ACTIVE');
